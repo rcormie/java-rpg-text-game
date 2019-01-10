@@ -21,9 +21,11 @@ public class Game
 
         gf.pressEnterToContinue();
 
-        // System.out.println("Please enter a name: ");
+        System.out.println("Please enter your name: ");
 
-        // String name = keyboard.nextLine();
+        String name = keyboard.nextLine();
+
+        player.setName(name);
 
         System.out.println("What class is your character? Please select one of the following:\n"+
                 "-----------------------------------------------------------------\n"+
@@ -46,7 +48,7 @@ public class Game
             player.setPlayerClass("Mage");
         }
 
-        System.out.println("You chose: " + player.getPlayerClass());
+        System.out.println("You are a " + player.getPlayerClass() + " named " + player.getName() + ".");
 
 
 
