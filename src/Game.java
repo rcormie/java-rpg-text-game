@@ -44,5 +44,10 @@ public class Game {
         }
 
         player.printStats();
+
+        System.out.println("You are walking along a forest path. Suddenly you are ambushed!");
+        Battle battle = new Battle();
+
+        battle.initBattle();
     }
 }

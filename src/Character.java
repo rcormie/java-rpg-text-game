@@ -4,12 +4,13 @@
  * Inherit from this class.
  *
  * @author Robin Cormie
- * @version  0.0.1
+ * @version 0.0.1
  */
-public abstract class Character
-{
+public abstract class Character {
+
     // instance variables
     private double maxHitPoints;
+    private double currentHitPoints;
     private int level;
     private String name;
 
@@ -17,6 +18,30 @@ public abstract class Character
     private int strength;
     private int agility;
     private int wisdom;
+
+    //no arg constructor
+    public Character() {
+        this.maxHitPoints = 0;
+        this.level = 0;
+        this.name = null;
+        this.strength = 0;
+        this.agility = 0;
+        this.wisdom = 0;
+        this.alive = false;
+    }
+
+    public Character(double maxHitPoints, int level, String name, int strength, int agility, int wisdom, boolean alive) {
+        this.maxHitPoints = maxHitPoints;
+        this.level = level;
+        this.name = name;
+        this.strength = strength;
+        this.agility = agility;
+        this.wisdom = wisdom;
+        this.alive = alive;
+    }
+
+    //gameplay
+    private boolean alive;
 
     public int getStrength() {
         return strength;
@@ -43,33 +68,39 @@ public abstract class Character
     }
 
 
-    public void setMaxHitPoints(double h)
-    {
+    public void setMaxHitPoints(double h) {
         maxHitPoints = h;
     }
 
-    public double getMaxHitPoints()
-    {
+    public double getMaxHitPoints() {
         return maxHitPoints;
     }
 
-    public void setLevel(int l)
-    {
+    public double getCurrentHitPoints() {return currentHitPoints; }
+
+    public void setCurrentHitPoints(double currentHitPoints) {this.currentHitPoints = currentHitPoints;}
+
+    public void setLevel(int l) {
         level = l;
     }
 
-    public int getLevel()
-    {
+    public int getLevel() {
         return level;
     }
 
-    public void setName(String n)
-    {
+    public void setName(String n) {
         name = n;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
+    }
+
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
     }
 }

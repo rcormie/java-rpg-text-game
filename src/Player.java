@@ -15,6 +15,7 @@ public class Player extends Character
     {
         playerClass = p;
 
+        //Player start values
         if(playerClass.equals("Warrior"))
         {
             setStrength(8);
