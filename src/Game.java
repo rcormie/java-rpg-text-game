@@ -6,10 +6,8 @@ import java.util.Scanner;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Game
-{
-    public static void main(String[] args)
-    {
+public class Game {
+    public static void main(String[] args) {
         GameFunction gf = new GameFunction();
         Player player = new Player();
         Scanner keyboard = new Scanner(System.in);
@@ -26,36 +24,25 @@ public class Game
         String name = keyboard.nextLine();
 
         player.setName(name);
+        int playerClass;
 
-        System.out.println("What class is your character? Please select one of the following:\n"+
-                "-----------------------------------------------------------------\n"+
-                "                [1]Warrior [2]Thief [3]Mage\n"+
-                "-----------------------------------------------------------------\n");
+        do {
+            System.out.println("What class is your character? Please select one of the following:\n" +
+                    "-----------------------------------------------------------------\n" +
+                    "                [1]Warrior [2]Thief [3]Mage\n" +
+                    "-----------------------------------------------------------------\n");
 
+             playerClass = keyboard.nextInt();
+        } while (playerClass >3 || playerClass < 1);
 
-        int playerClass = keyboard.nextInt();
-
-        if (playerClass == 1)
-        {
+        if (playerClass == 1) {
             player.setPlayerClass("Warrior");
-        }
-        else if (playerClass == 2)
-        {
+        } else if (playerClass == 2) {
             player.setPlayerClass("Thief");
-        }
-        else if (playerClass == 3)
-        {
+        } else if (playerClass == 3) {
             player.setPlayerClass("Mage");
         }
 
-        System.out.println("You are a " + player.getPlayerClass() + " named " + player.getName() + ".");
-
-
-
-        // Player player = new Player();
-
-        // player.setMaxHitPoints(10);
-
-        // System.out.println(name + "'s has " + player.getMaxHitPoints() + " hit points.");
+        player.printStats();
     }
 }
